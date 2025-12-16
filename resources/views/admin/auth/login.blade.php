@@ -1,13 +1,11 @@
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
-<h4>Admin login</h4><br>
-
-
-    <form method="POST" action="{{ route('login') }}">
+    <h1>Admin login</h1><br>
+    <form method="POST" action="{{ route('admin.login.store') }}">
         @csrf
 
-        <!-- Email Addres -->
+        <!-- Email Address -->
         <div>
             <x-input-label for="email" :value="__('Email')" />
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
